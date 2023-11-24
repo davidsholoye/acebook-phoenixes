@@ -294,9 +294,19 @@ button:hover {
     margin-top: 30px;
 }
 
-.posts-content-form #timeline-form-content {
+#timeline-form-content {
     width: 94%;
     padding: 20px;
+}
+
+.text-area-form {
+    position: relative;
+}
+
+#emoji-button {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
 }
 
 .timeline-posts {

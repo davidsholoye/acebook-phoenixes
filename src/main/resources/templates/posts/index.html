@@ -6,6 +6,7 @@
     <title>Acebook</title>
     <link rel="stylesheet" href="/website.css"/>
 
+    <script src="https://cdn.jsdelivr.net/npm/@joeattardi/emoji-button@3.0.3/dist/index.min.js"></script>
     <script>
         function handleImage(input) {
             let file = input.files[0];
@@ -55,8 +56,12 @@
             Welcome <span sec:authentication="name" class="header-title-name"></span>!
         </div>
 
-        <form action="#" th:action="@{/posts}" th:object="${newPost}" method="post" class="posts-content-form">
-            <textarea type="text" rows="10" placeholder="Write a post..." id=timeline-form-content th:field="*{content}" required></textarea>
+        <form action="#" th:action="@{/posts}" th:object="${newPost}" method="post">
+            <div class="text-area-form">
+                <textarea rows="10" placeholder="Write a post..." id="timeline-form-content" th:field="*{content}" required></textarea>
+                <button type="button" id="emoji-button">😃</button>
+            </div>
+
             <label for="postPhoto">Upload a picture</label>
             <input type="file" id="postPhoto" name="postPhoto" accept="image/*" onChange="handleImage(this)">
             <input type="hidden" id="fileData" name="fileData" />
@@ -94,5 +99,16 @@
             </li>
         </ul>
     </div>
+
+    <script>
+        const button = document.querySelector('#emoji-button');
+        const picker = new EmojiButton();
+        picker.on('emoji', emoji => {
+            document.querySelector('#timeline-form-content').value += emoji;
+          });
+        button.addEventListener('click', () => {
+          picker.togglePicker(button);
+        });
+    </script>
     </body>
 </html>
