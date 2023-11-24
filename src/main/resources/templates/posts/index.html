@@ -73,7 +73,7 @@
 
                 <!-- Post Content -->
                 <div class="post-content">
-                    <p th:text="${map.post.getContent()}"></p>
+                    <p id="postContent" th:text="${map.post.getContent()}"></p>
                     <div th:if="${map.post.getPostPhoto() != '' && map.post.getPostPhoto() != null}">
                         <img th:src="${map.post.getPostPhoto()}" alt="an image" width="400" height="350" />
                     </div>
