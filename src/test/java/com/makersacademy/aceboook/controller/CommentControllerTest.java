@@ -52,7 +52,7 @@ public class CommentControllerTest {
         driver.findElement(By.id("password")).sendKeys("password22");
         driver.findElement(By.id("submit")).click();
         driver.findElement(By.id("comment")).click();
-        driver.findElement(By.id("addComment")).sendKeys("Here is my new comment!");
+        driver.findElement(By.id("timeline-form-content")).sendKeys("Here is my new comment!");
         driver.findElement(By.id("submitComment")).click();
 
         List<WebElement> commentsList = driver.findElements(By.id("commentContent"));

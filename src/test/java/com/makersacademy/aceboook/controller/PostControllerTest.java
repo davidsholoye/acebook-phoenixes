@@ -86,9 +86,9 @@ public class PostControllerTest {
         driver.findElement(By.id("timeline-form-content")).sendKeys("Testing Comment Button");
         driver.findElement(By.id("submit-posts")).click();
         driver.findElement(By.id("comment")).click();
-        WebElement h3Element = driver.findElement(By.tagName("h3"));
-        String h3Text = h3Element.getText();
-        Assert.assertEquals("Testing Comment Button", h3Text);
+        WebElement postContent = driver.findElement(By.id("postContent"));
+        String postText = postContent.getText();
+        Assert.assertEquals("Testing Comment Button", postText);
 
     }
 
