@@ -44,6 +44,10 @@
                 <span th:text="${postOwner.getUsername()}"></span>
             </a>
             <p class="post-content" th:text="${currentPost.content}"></p>
+            <div th:if="${currentPost.postPhoto != '' && currentPost.postPhoto != null}">
+                <img th:src="${currentPost.postPhoto}" alt="an image" width="400" height="350" />
+            </div>
+            <p th:text="${currentPost.timestamp}"></p>
         </div>
 
         <!--    Form to add a comment to post -->
